@@ -9,3 +9,12 @@ jobs:
     - name: test
       run: |
         echo ${{ github }}
+        echo ${{ github.event }}
+        echo ${{ github.workflow }}
+        echo ${{ github.actor }}
+        echo ${{ github.repository }}
+        echo ${{ github.event_name }}
+        echo ${{ github.sha }}
+        echo ${{ github.ref }}
+        echo ${{ github.head_ref }}
+        echo ${{ github.base_ref }}
