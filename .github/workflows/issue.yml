@@ -1,5 +1,4 @@
 name: TEST
-
 on: push
 
 jobs:
