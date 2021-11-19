@@ -8,9 +8,10 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2.4.0
-        
+
       - name: test
         run: |
+          echo "$GITHUB_ENV"
           NOT_IN_CONTAINER="this is not in the container"
           docker build -t test .
           docker run --env-file "$GITHUB_ENV" test
