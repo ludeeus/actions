@@ -8,6 +8,7 @@ jobs:
     steps:
     - name: test
       run: |
-        docker run --env-file "$GITHUB_ENV" debian bash -c "echo '$TEST'"
+        NOT_IN_CONTAINER="this is not in the container"
+        docker run --env-file "$GITHUB_ENV" debian bash -c "echo '$TEST'; echo $NOT_IN_CONTAINER"
       env: 
-        TEST: 'Test string to be passed to the container'
+        TEST: "echo Test string to be passed to the container"
