@@ -6,10 +6,13 @@ jobs:
     name: test
     runs-on: ubuntu-latest
     steps:
-    - name: test
-      run: |
-        NOT_IN_CONTAINER="this is not in the container"
-        docker build -t test .
-        docker run --env-file "$GITHUB_ENV" test
-      env: 
-        TEST: "echo Test string to be passed to the container"
+      - name: Checkout the repository
+        uses: actions/checkout@v2.4.0
+        
+      - name: test
+        run: |
+          NOT_IN_CONTAINER="this is not in the container"
+          docker build -t test .
+          docker run --env-file "$GITHUB_ENV" test
+        env: 
+          TEST: "echo Test string to be passed to the container"
