@@ -10,4 +10,4 @@ jobs:
       run: |
         docker run --env-file "$GITHUB_ENV" debian bash -c "echo '$TEST'"
       env: 
-        TEST: 'Test string to be passed to the container'"
+        TEST: 'Test string to be passed to the container'
