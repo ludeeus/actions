@@ -8,4 +8,6 @@ jobs:
     steps:
     - name: test
       run: |
-        echo ${{ github.event.data }}
+        docker run --env-file "$GITHUB_ENV" debian bash -c "echo '$TEST'"
+      env: 
+        TEST: 'Test string to be passed to the container'"
